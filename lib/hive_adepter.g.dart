@@ -16,10 +16,9 @@ class PersonAdapter extends TypeAdapter<Person> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Person(
-      name: fields[0] as String,
-      age: fields[1] as int,
-    );
+    return Person(name: '', age: 0)
+      ..name = fields[0] as String
+      ..age = fields[1] as int;
   }
 
   @override
